@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+
+<section class="bites">
+
+    {% for bite in bites %}
+        <bite>
+            <h2>{{ bite.id }}</h2>
+            <div class="content">
+                <img src="http://placehold.it/350x150" alt="">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam quidem suscipit possimus est labore magni.</p>
+                <p>Libero consectetur omnis numquam deserunt a ab voluptatibus, aspernatur impedit, optio, blanditiis alias. Quasi, voluptate?</p>
+                <a href="" class="btn-primary">Lire la suite</a>
+            </div>
+        </bite>
+    {% endfor %}
+</section>
+{% endblock %}
