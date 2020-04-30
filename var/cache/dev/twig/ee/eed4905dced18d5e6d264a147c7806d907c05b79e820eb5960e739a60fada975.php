@@ -227,6 +227,6 @@ class __TwigTemplate_7597bd6a044415e5fcc97da468ef3d98c6a6b20fdcec228b7dea3be04da
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/exception.html.twig", "C:\\Users\\Steeve\\Desktop\\AlgoBreizh1\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\exception.html.twig");
+", "@WebProfiler/Collector/exception.html.twig", "C:\\Algo\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\exception.html.twig");
     }
 }

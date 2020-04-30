@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ produit.nomProduit }} {% endblock %}
+
+{% block body %}
+
+
+<section class="container-fluid boite">
+        <produit>
+            <h2>{{ produit.nomProduit }}</h2>
+            <div class="content uits">
+                <a href="https://127.0.0.1:8000/accueil/detail/{{ produit.idProduit }}"><img src="../../Images/produits/{{ produit.image }}  " alt=""></a>
+                <p>{{ produit.Types }}, {{ produit.Couleurs }}, {{ produit.Saveurs }}</p>
+                <p>{{ produit.Utilisation }},</p>
+                <p>{{ produit.Accompagnement }}</p>
+                <button type="button" class="btn btn-default navbar-btn">ACHETER !!!</button>
+            </div>
+        </produit>
+</section>
+
+{% endblock %}

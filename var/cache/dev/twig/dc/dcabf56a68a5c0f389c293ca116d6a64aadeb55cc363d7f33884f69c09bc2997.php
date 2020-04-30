@@ -92,12 +92,12 @@ class __TwigTemplate_833e606fb66ad55c3cdd8088337cca09a3c2a8b2b5a4fe8be4371e159e8
         // line 9
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["bites"]) || array_key_exists("bites", $context) ? $context["bites"] : (function () { throw new RuntimeError('Variable "bites" does not exist.', 9, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["bite"]) {
-            // line 10
-            echo "        <bite>
+        foreach ($context['_seq'] as $context["_key"] => $context["anus"]) {
+            echo " <!-- A la base c'était \"bite\" et non \"anus\" -->
+        <bite>
             <h2>";
             // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["bite"], "id", [], "any", false, false, false, 11), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["anus"], "id", [], "any", false, false, false, 11), "html", null, true);
             echo "</h2>
             <div class=\"content\">
                 <img src=\"http://placehold.it/350x150\" alt=\"\">
@@ -109,7 +109,7 @@ class __TwigTemplate_833e606fb66ad55c3cdd8088337cca09a3c2a8b2b5a4fe8be4371e159e8
     ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['bite'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['anus'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 20
         echo "</section>
@@ -134,7 +134,7 @@ class __TwigTemplate_833e606fb66ad55c3cdd8088337cca09a3c2a8b2b5a4fe8be4371e159e8
 
     public function getDebugInfo()
     {
-        return array (  115 => 20,  100 => 11,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  115 => 20,  100 => 11,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -147,9 +147,9 @@ class __TwigTemplate_833e606fb66ad55c3cdd8088337cca09a3c2a8b2b5a4fe8be4371e159e8
 
 <section class=\"bites\">
 
-    {% for bite in bites %}
+    {% for anus in bites %} <!-- A la base c'était \"bite\" et non \"anus\" -->
         <bite>
-            <h2>{{ bite.id }}</h2>
+            <h2>{{ anus.id }}</h2>
             <div class=\"content\">
                 <img src=\"http://placehold.it/350x150\" alt=\"\">
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam quidem suscipit possimus est labore magni.</p>

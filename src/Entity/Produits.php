@@ -33,7 +33,7 @@ class Produits
     /**
      * @var string|null
      *
-     * @ORM\Column(name="image", type="text", length=65535, nullable=true)
+     * @ORM\Column(name="image", type="string", length=1000, nullable=true)
      */
     private $image;
 
@@ -71,6 +71,13 @@ class Produits
      * @ORM\Column(name="Accompagnement", type="text", length=65535, nullable=false)
      */
     private $accompagnement;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="image2", type="string", length=255, nullable=true)
+     */
+    private $image2;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -172,6 +179,18 @@ class Produits
     public function setAccompagnement(string $accompagnement): self
     {
         $this->accompagnement = $accompagnement;
+
+        return $this;
+    }
+
+    public function getImage2(): ?string
+    {
+        return $this->image2;
+    }
+
+    public function setImage2(?string $image2): self
+    {
+        $this->image2 = $image2;
 
         return $this;
     }

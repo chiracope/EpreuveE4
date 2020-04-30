@@ -12,7 +12,7 @@ namespace PackageVersions;
  */
 final class Versions
 {
-    public const ROOT_PACKAGE_NAME = 'symfony/website-skeleton';
+    public const ROOT_PACKAGE_NAME = '__root__';
     /**
      * Array of all available composer packages.
      * Dont read this array from your calling code, but use the \PackageVersions\Versions::getVersion() method instead.
@@ -112,6 +112,7 @@ final class Versions
   'symfony/var-dumper' => 'v5.0.4@923591cfb78a935f0c98968fedfad05bfda9d01f',
   'symfony/var-exporter' => 'v5.0.4@960f9ac0fdbd642461ed29d7717aeb2a94d428b9',
   'symfony/web-link' => 'v5.0.4@78dd64d9f666550f4f7d9e64b59337e7f274389d',
+  'symfony/webpack-encore-bundle' => 'v1.7.3@5c0f659eceae87271cce54bbdfb05ed8ec9007bd',
   'symfony/yaml' => 'v5.0.4@69b44e3b8f90949aee2eb3aa9b86ceeb01cbf62a',
   'twig/extra-bundle' => 'v3.0.3@6eaf1637abe6b68518e7e0949ebb84e55770d5c6',
   'twig/twig' => 'v3.0.3@3b88ccd180a6b61ebb517aea3b1a8906762a1dc2',
@@ -129,14 +130,14 @@ final class Versions
   'symfony/profiler-pack' => 'v1.0.4@99c4370632c2a59bb0444852f92140074ef02209',
   'symfony/test-pack' => 'v1.0.6@ff87e800a67d06c423389f77b8209bc9dc469def',
   'symfony/web-profiler-bundle' => 'v5.0.4@8f4831567fc39bbe42af415a14a6039621349787',
-  'paragonie/random_compat' => '2.*@',
-  'symfony/polyfill-ctype' => '*@',
-  'symfony/polyfill-iconv' => '*@',
-  'symfony/polyfill-php72' => '*@',
-  'symfony/polyfill-php71' => '*@',
-  'symfony/polyfill-php70' => '*@',
-  'symfony/polyfill-php56' => '*@',
-  'symfony/website-skeleton' => 'v5.0.99@',
+  'paragonie/random_compat' => '2.*@f0cd614f7d5b105937ededa9518b1330f9a0234a',
+  'symfony/polyfill-ctype' => '*@f0cd614f7d5b105937ededa9518b1330f9a0234a',
+  'symfony/polyfill-iconv' => '*@f0cd614f7d5b105937ededa9518b1330f9a0234a',
+  'symfony/polyfill-php72' => '*@f0cd614f7d5b105937ededa9518b1330f9a0234a',
+  'symfony/polyfill-php71' => '*@f0cd614f7d5b105937ededa9518b1330f9a0234a',
+  'symfony/polyfill-php70' => '*@f0cd614f7d5b105937ededa9518b1330f9a0234a',
+  'symfony/polyfill-php56' => '*@f0cd614f7d5b105937ededa9518b1330f9a0234a',
+  '__root__' => 'dev-master@f0cd614f7d5b105937ededa9518b1330f9a0234a',
 );
 
     private function __construct()

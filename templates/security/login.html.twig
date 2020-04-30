@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connectez-Vous !{% endblock %}
+
+{% block body %}
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+    </br>
+    <h1 class="h3 mb-3 font-weight-normal">Connectez Vous </h1>
+    <label for="inputEmail">Email</label>
+    <input type="Email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+    </br>
+    <label for="inputPassword">Mot de passe</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" required>
+
+    <input type="checkbox" id="remember_me" name="_remember_me" checked/>
+    <label for="remember_me"> Restez Connecter </label>
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+    </br>
+    <button class="btn btn-lg btn-primary" type="submit">
+        Connexion
+    </button>
+</form>
+
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <p>Connecté : {{ app.user.username }}</p>
+{% else %}
+	
+{% endif %}
+
+{% endblock %}

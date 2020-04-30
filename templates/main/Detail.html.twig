@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}  {% endblock %}
+
+{% block body %}
+
+        <produit>
+            <h2>Nom de l'article : {{ produit.nomProduit }}</h2>
+            <div class="content">
+                <img src="../Images/produits/{{ produit.image }}  " alt=""></img>
+                <img src="../Images/produits/{{ produit.image2 }} " alt=""></img>               
+                <p>Despcrition générale :  Types = {{ produit.Types }}, Couleurs = {{ produit.Couleurs }}, Saveurs = {{ produit.Saveurs }}</p>
+                <p>Utilisations : {{ produit.Utilisation }}, Accompagnement 
+                .= {{ produit.Accompagnement }}</p>
+            </div>
+        </produit>
+
+{% endblock %}

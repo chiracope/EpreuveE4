@@ -13,13 +13,8 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/main' => [[['_route' => 'main', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
-        '/abonne' => [[['_route' => 'abonne', '_controller' => 'App\\Controller\\MainController::abonne'], null, null, null, false, false, null]],
-        '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\MainController::admin'], null, null, null, false, false, null]],
-        '/connexion' => [[['_route' => 'connection', '_controller' => 'App\\Controller\\MainController::connection'], null, null, null, false, false, null]],
-        '/inscription' => [[['_route' => 'inscription', '_controller' => 'App\\Controller\\MainController::inscription'], null, null, null, false, false, null]],
-        '/compte' => [[['_route' => 'compte', '_controller' => 'App\\Controller\\MainController::compte'], null, null, null, false, false, null]],
-        '/panier' => [[['_route' => 'panier', '_controller' => 'App\\Controller\\MainController::panier'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'accueil', '_controller' => 'App\\Controller\\AccueilController::index'], null, null, null, false, false, null]],
+        '/inscription' => [[['_route' => 'inscription', '_controller' => 'App\\Controller\\InscriptionController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -38,6 +33,7 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
+                .'|/accueil/detail/([^/]++)(*:193)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -47,8 +43,9 @@ return [
         116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        159 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        193 => [
+            [['_route' => 'detail_produit', '_controller' => 'App\\Controller\\DetailProduitController::detailProduit'], ['id'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

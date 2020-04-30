@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+
+{% block body %}
+    <section class="Produits container-fluid boite">
+        <div class=intersection">
+        {% for produit in Produits %}
+        <produit class="container-fluid prod">
+            <p>---------------------------------------------------------------------------------</p>
+            <h2>{{ produit.nomProduit }}</h2>
+            <div class="content uits">
+                <a href="https://127.0.0.1:8000/accueil/detail/{{ produit.idProduit }}"><img src="../Images/produits/{{ produit.image }}  " alt=""></a>
+                <p>{{ produit.Types }}, {{ produit.Couleurs }}, {{ produit.Saveurs }}</p>
+                <p>{{ produit.Utilisation }},</p>
+                <p>{{ produit.Accompagnement }}</p>
+            </div>
+        </produit>
+        {% endfor %}
+        </div>
+    </section>
+{% endblock %}

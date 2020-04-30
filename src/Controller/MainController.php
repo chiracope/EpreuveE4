@@ -5,57 +5,18 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Bite;
+use App\Entity\Produits;
 
 
 class MainController extends AbstractController
 {
-    /**
-     * @Route("/main", name="main")
-     */
-    public function index()
-    {
-        $repo = $this->getDoctrine()->getRepository(Bite::class);
 
-        $bites = $repo->findAll();
-
-        return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
-            'bites' => $bites
-        ]);
-    }
     /**
      * @Route("/abonne", name="abonne")
      */
     public function abonne()
     {
         return $this->render('main/abonne.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
-    }
-    /**
-     * @Route("/admin", name="admin")
-     */
-    public function admin()
-    {
-        return $this->render('main/admin.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
-    }
-    /**
-     * @Route("/connexion", name="connection")
-     */
-    public function connection()
-    {
-        return $this->render('main/connection.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
-    }
-    /**
-     * @Route("/inscription", name="inscription")
-     */
-    public function inscription()
-    {
-        return $this->render('main/inscription.html.twig', [
             'controller_name' => 'MainController',
         ]);
     }
@@ -77,4 +38,34 @@ class MainController extends AbstractController
             'controller_name' => 'MainController',
         ]);
     }
+    
+    /**
+     * @Route("/produits", name="produits")
+     */
+    public function produits()
+    {
+        $repo = $this->getDoctrine()->getRepository(Produits::class);
+
+        $Produits = $repo->findAll();
+
+        return $this->render('main/produits.html.twig',[
+            'controller_name' => 'MainController',
+            'Produits' => $Produits
+        ]);
+    }
+    /**
+     * @Route("/produits/{id}", name="produitsDétail")
+     */
+    public function Detail($id)
+    {
+        $repo = $this->getDoctrine()->getRepository(Produits::class);
+
+        $Produit = $repo->find($id);
+
+        return $this->render('main/Detail.html.twig',[
+            'controller_name' => 'MainController',
+            'produit' => $Produit,
+        ]);
+    }
+
 }

@@ -3,37 +3,106 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel ="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {# 'app' must match the first argument to addEntry() in webpack.config.js #}
+            {{ encore_entry_link_tags('app') }}
+
+            <!-- Renders a link tag (if your module requires any CSS)
+                 <link rel="stylesheet" href="/build/app.css"> -->
+        {% endblock %}
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="/">Algobreizh</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/HomePage">Produits</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Connexion">Se connecter</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/inscription"> S'inscrire </a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="https://127.0.0.1:8000/accueil"><img alt="AlgoBreizh" src="/Images/AlgoBreizh_Logo_128px.png"></a>
             </div>
-        </nav>
-        <div class="container"">
-            {% block body %}{% endblock %}
+            <ul class="nav navbar-nav navbar-right">
+                <li><button type="button" class="btn btn-default decal navbar-btn"><a href="https://127.0.0.1:8000/inscription"><span class="glyphicon glyphicon-user"></span>Inscription</a></button></li>
+                <li><button type="button" class="btn btn-default navbar-btn"><a href="#"><span class="glyphicon glyphicon-log-in"></span>Connexion</a></button></li>
+            </ul>
         </div>
-        {% block javascripts %}{% endblock %}
+    </nav>
+    {% block body %}{% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+
+        <!-- Renders app.js & a webpack runtime.js file
+            <script src="/build/runtime.js"></script>
+            <script src="/build/app.js"></script> -->
+    {% endblock %}
+    <footer id="footer" class="footer-1">
+        <div class="main-footer widgets-dark typo-light">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget subscribe no-box">
+                            <h5 class="widget-title">AlgoBreizh<span></span></h5>
+                            <p>
+                                - SARL au capital de 100 000 euros
+                                18, rue de Molene, 29810 LAMPAUL-PLOUARZEL
+                                </p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Quick Links<span></span></h5>
+                            <ul class="thumbnail-widget">
+
+                                <li>
+                                    <div class="thumb-content"><a href="#.">Acceuil</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="#.">News</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="#.">Lifestyle</a></div>
+                                </li>
+                                <li>
+                                    <div class="thumb-content"><a href="#.">About</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Rejoignez-nous <span></span></h5>
+                            <p>Venez faire partie de l'aventure AlgoBreizh</p>
+                            <a class="btn" href="https://127.0.0.1:8000/inscription">S'inscrire</a>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+
+                        <div class="widget no-box">
+                            <h5 class="widget-title">Contactez-nous !<span></span></h5>
+
+                            <p><a href="mailto:info@domain.com" title="glorythemes">info@algobreizh.com</a></p>
+                            <ul class="social-footer2">
+                                <li class=""><p><a title="youtube" target="_blank" href="https://www.youtube.com/">www.algobreizh.com </a></p>
+                                    <p><a title="youtube" target="_blank" href="https://www.youtube.com/">02.98.97.96.95 </a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>Copyright AlgoBreizh © 2020. Tous droits réservés @RevTec.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     </body>
+
 </html>

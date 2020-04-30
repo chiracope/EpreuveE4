@@ -10,11 +10,8 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             'name' => [
                 'image',
             ],
-            'type' => [
-                'text',
-            ],
             'length' => [
-                65535,
+                1000,
             ],
             'nullable' => [
                 true,
